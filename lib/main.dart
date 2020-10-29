@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterstart/views/LoginScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MessageList(title: 'Flutter Demo Home Page'),
+      home: LoginScreen(),
     );
   }
 }
@@ -33,6 +34,8 @@ class MessageList extends StatefulWidget {
 }
 
 class _MessageList extends State<MessageList> {
+  //https://run.mocky.io/v3/a5a04132-9851-4770-b8ba-a103355efa15
+
   Future loadMessageList() async {
     var content = await rootBundle.loadString("data/message.json");
     var collection = json.decode(content);
