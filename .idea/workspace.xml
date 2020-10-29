@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c205453-261d-455f-8ccd-3abced6eff33" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jE3F7QoE2rz5raUCA7NXOi57Fs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c205453-261d-455f-8ccd-3abced6eff33" name="Default Changelist" comment="" />
+      <created>1603355316983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603355316983</updated>
+      <workItem from="1603355333832" duration="1233000" />
+      <workItem from="1603357381607" duration="874000" />
+      <workItem from="1603790199304" duration="5604000" />
+      <workItem from="1603874874988" duration="2016000" />
+      <workItem from="1603944319725" duration="1371000" />
+      <workItem from="1603961377689" duration="499000" />
+      <workItem from="1603961915366" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603962101453">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-2560.-486.2560.1417@0.0.1680.1050" timestamp="1603962101453" />
+    <state x="454" y="221" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1603961568974">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="454" y="221" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603961568974" />
+    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1603962122288">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603962122288" />
+    <state x="705" y="425" key="Github.ShareDialog" timestamp="1603877322796">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="705" y="425" key="Github.ShareDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877322796" />
+    <state x="626" y="238" key="Github.UntrackedFilesDialog" timestamp="1603877329429">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="626" y="238" key="Github.UntrackedFilesDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877329429" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1603877295774">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877295774" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1603877295773">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877295773" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1603877295772">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877295772" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1603877295774">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603877295774" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1603961759664">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603961759664" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1603945545394">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603945545394" />
+  </component>
+</project>
