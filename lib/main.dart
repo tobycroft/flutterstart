@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
 var message = [];
 
 class MessageList extends StatefulWidget {
+  
   final String title;
 
   MessageList({this.title});
