@@ -1,8 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutterstart/views/LoginScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,60 +13,59 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginScreen(),
+      home: BottomTab(Key("asd")),
     );
   }
 }
 
-var message = [];
-
-class MessageList extends StatefulWidget {
-  
-  final String title;
-
-  MessageList({this.title});
+class BottomTab extends StatefulWidget {
+  const BottomTab(Key key) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MessageList();
+  State<StatefulWidget> createState() => _BottomTab();
 }
 
-class _MessageList extends State<MessageList> {
-  //https://run.mocky.io/v3/a5a04132-9851-4770-b8ba-a103355efa15
+class _BottomTab extends State<BottomTab> with SingleTickerProviderStateMixin {
+  TabController _tabController;
 
-  Future loadMessageList() async {
-    var content = await rootBundle.loadString("data/message.json");
-    var collection = json.decode(content);
+  static const tabpage = <Widget>[
+    Center(child: Icon(Icons.cloud, size: 64, color: Colors.green)),
+    Center(child: Icon(Icons.alarm, size: 64, color: Colors.green)),
+    Center(child: Icon(Icons.forum, size: 64, color: Colors.green)),
+  ];
 
-    setState(() {
-      message = collection;
-    });
-    print(message);
+  static const tab = <Tab>[
+    Tab(icon: Icon(Icons.cloud), text: "tab1"),
+    Tab(icon: Icon(Icons.alarm), text: "tab1"),
+    Tab(icon: Icon(Icons.forum), text: "tab1"),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
   }
 
-  void initState() {
-    loadMessageList();
-    super.initState();
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: null,
+      body: TabBarView(
+        children: tabpage,
+        controller: _tabController,
       ),
-      body: ListView.separated(
-        itemCount: message.length,
-        separatorBuilder: (context, index) => Divider(),
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(message[index]['subject']),
-            isThreeLine: false,
-            leading: CircleAvatar(
-              child: Text(index.toString()),
-            ),
-            subtitle: Text(message[index]["body"]),
-          );
-        },
+      bottomNavigationBar: Material(
+        color: Colors.blue,
+        child: TabBar(
+          tabs: tab,
+          controller: this._tabController,
+        ),
       ),
     );
   }
