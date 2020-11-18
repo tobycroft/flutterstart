@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstart/index/message/message.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,11 +28,14 @@ class BottomTab extends StatefulWidget {
 
 class _BottomTab extends State<BottomTab> with SingleTickerProviderStateMixin {
   TabController _tabController;
+  Widget _message;
 
   static const tabpage = <Widget>[
-    Center(child: Icon(Icons.message, size: 64, color: Colors.blue)),
+   _message,
     Center(child: Icon(Icons.contacts, size: 64, color: Colors.green)),
-    Center(child: Icon(Icons.supervised_user_circle, size: 64, color: Colors.green)),
+    Center(
+        child:
+            Icon(Icons.supervised_user_circle, size: 64, color: Colors.green)),
     Center(child: Icon(Icons.settings, size: 64, color: Colors.green)),
   ];
 
@@ -61,7 +65,6 @@ class _BottomTab extends State<BottomTab> with SingleTickerProviderStateMixin {
       body: TabBarView(
         children: tabpage,
         controller: _tabController,
-
       ),
       bottomNavigationBar: Material(
         color: Colors.blue,
