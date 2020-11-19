@@ -28,10 +28,9 @@ class BottomTab extends StatefulWidget {
 
 class _BottomTab extends State<BottomTab> with SingleTickerProviderStateMixin {
   TabController _tabController;
-  Widget _message;
 
   static const tabpage = <Widget>[
-   _message,
+    Center(child: MessagePage(Key("asd"))),
     Center(child: Icon(Icons.contacts, size: 64, color: Colors.green)),
     Center(
         child:
