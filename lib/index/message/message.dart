@@ -17,39 +17,39 @@ class _MessagePage extends State<MessagePage> {
   //   {"key": "value"},
   // ];
   //
-  // var msg2 = [
-  //   Text("data"),
-  //   Text("data"),
-  //   Text("data"),
-  //   Text("data"),
-  //   Text("data"),
-  //   Text("data"),
-  // ];
+  var msg2 = [
+    Text("data"),
+    Text("data"),
+    Text("data"),
+    Text("data"),
+    Text("data"),
+    Text("data"),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Slidable Demo'),
-      ),
+      // appBar: AppBar(
+        // title: Text('Flutter Slidable Demo'),
+      // ),
       body: ListView.builder(
-        itemCount: 100,
+        itemCount: msg2.length,
         itemBuilder: (context, index) {
           return Slidable(
             key: ValueKey(index),
             actionPane: SlidableDrawerActionPane(),
-            actions: <Widget>[
-              IconSlideAction(
-                caption: 'Archive',
-                color: Colors.blue,
-                icon: Icons.archive,
-              ),
-              IconSlideAction(
-                caption: 'Share',
-                color: Colors.indigo,
-                icon: Icons.share,
-              ),
-            ],
+            // actions: <Widget>[
+            //   IconSlideAction(
+            //     caption: 'Archive',
+            //     color: Colors.blue,
+            //     icon: Icons.archive,
+            //   ),
+            //   IconSlideAction(
+            //     caption: 'Share',
+            //     color: Colors.indigo,
+            //     icon: Icons.share,
+            //   ),
+            // ],
             secondaryActions: <Widget>[
               IconSlideAction(
                 caption: 'More',
@@ -66,7 +66,7 @@ class _MessagePage extends State<MessagePage> {
               child: SlidableDrawerDismissal(),
             ),
             child: ListTile(
-              title: Text('$index'),
+              title: msg2[index],
             ),
           );
         },
