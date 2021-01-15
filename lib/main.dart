@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstart/index/message/message.dart';
+import 'package:flutterstart/route.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,64 +14,102 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BottomTab(Key("asd")),
+      home: BotomeMenumPage(),
     );
   }
 }
 
-class BottomTab extends StatefulWidget {
-  const BottomTab(Key key) : super(key: key);
+/**
+ * 有状态StatefulWidget
+ *  继承于 StatefulWidget，通过 State 的 build 方法去构建控件
+ */
+class BotomeMenumPage extends StatefulWidget {
+  BotomeMenumPage();
 
+  //主要是负责创建state
   @override
-  State<StatefulWidget> createState() => _BottomTab();
+  BotomeMenumPageState createState() => BotomeMenumPageState();
 }
 
-class _BottomTab extends State<BottomTab> with SingleTickerProviderStateMixin {
-  TabController _tabController;
-
-  static const tabpage = <Widget>[
-    Center(child: MessagePage(Key("asd"))),
-    Center(child: Icon(Icons.contacts, size: 64, color: Colors.green)),
-    Center(
-        child:
-            Icon(Icons.supervised_user_circle, size: 64, color: Colors.green)),
-    Center(child: Icon(Icons.settings, size: 64, color: Colors.green)),
-  ];
-
-  static const tab = <Tab>[
-    Tab(icon: Icon(Icons.message), text: "Message"),
-    Tab(icon: Icon(Icons.contacts), text: "Contacts"),
-    Tab(icon: Icon(Icons.supervised_user_circle), text: "Circle"),
-    Tab(icon: Icon(Icons.settings), text: "Me"),
-  ];
+/**
+ * 在 State 中,可以动态改变数据
+ * 在 setState 之后，改变的数据会触发 Widget 重新构建刷新
+ */
+class BotomeMenumPageState extends State<BotomeMenumPage> {
+  BotomeMenumPageState();
 
   @override
   void initState() {
+    ///初始化，这个函数在生命周期中只调用一次
     super.initState();
-    _tabController = TabController(length: tab.length, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    //构建页面
+    return buildBottomTabScaffold();
+  }
+
+  //当前显示页面的
+  int currentIndex = 0;
+
+  //底部导航栏显示的内容
+  final List<BottomNavigationBarItem> bottomNavItems = [
+    BottomNavigationBarItem(
+      backgroundColor: Colors.blue,
+      icon: Icon(Icons.home),
+      title: Text("首页"),
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.blue[600],
+      icon: Icon(Icons.format_indent_increase),
+      title: Text("发现"),
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.blue[800],
+      icon: Icon(Icons.message),
+      title: Text("动态"),
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.blue[900],
+      icon: Icon(Icons.person),
+      title: Text("我的"),
+    ),
+  ];
+
+  //点击导航项是要显示的页面
+  final pages = [
+    ChildItemView("首页"),
+    ChildItemView("发现"),
+    ChildItemView("动态"),
+    ChildItemView("我的")
+  ];
+
+  Widget buildBottomTabScaffold() {
     return Scaffold(
-      appBar: null,
-      body: TabBarView(
-        children: tabpage,
-        controller: _tabController,
+      bottomNavigationBar: BottomNavigationBar(
+        items: bottomNavItems,
+        currentIndex: currentIndex,
+        //所以一般都是使用fixed模式，此时，导航栏的图标和标题颜色会使用fixedColor指定的颜色，
+        // 如果没有指定fixedColor，则使用默认的主题色primaryColor
+        type: BottomNavigationBarType.fixed,
+        //底部菜单点击回调
+        onTap: (index) {
+          _changePage(index);
+        },
       ),
-      bottomNavigationBar: Material(
-        color: Colors.blue,
-        child: TabBar(
-          tabs: tab,
-          controller: this._tabController,
-        ),
-      ),
+      //对应的页面
+      body: pages[currentIndex],
     );
+  }
+
+  /*切换页面*/
+  void _changePage(int index) {
+    /*如果点击的导航项不是当前项  切换 */
+    if (index != currentIndex) {
+      setState(() {
+        currentIndex = index;
+      });
+    }
   }
 }
