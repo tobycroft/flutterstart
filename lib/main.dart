@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstart/index/index1.dart';
 import 'package:flutterstart/route.dart';
 
 void main() {
@@ -79,7 +80,7 @@ class BotomeMenumPageState extends State<BotomeMenumPage> {
 
   //点击导航项是要显示的页面
   final pages = [
-    ChildItemView("首页"),
+    Index1("首页"),
     ChildItemView("发现"),
     ChildItemView("动态"),
     ChildItemView("我的")
