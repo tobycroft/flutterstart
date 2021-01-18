@@ -20,6 +20,7 @@ class _Index1 extends State<Index1> {
         title: Text("data"),
         backgroundColor: Colors.black,
       ),
+      body: MaterialApp(),
     );
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
