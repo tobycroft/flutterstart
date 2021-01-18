@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 
+class Index1 extends StatefulWidget {
+  String _title;
 
-class Index1 extends StatelessWidget {
-  const Index1({Key key}) : super(key: key);
+  Index1(this._title);
+
+  @override
+  _Index1 createState()=>_Index1();
+
+}
+
+class _Index1 extends State<Index1> {
+
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("data"),
+        backgroundColor: Colors.black,
+      ),
+    );
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
       itemCount: data.length,
