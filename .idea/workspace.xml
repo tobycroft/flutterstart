@@ -4,14 +4,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c205453-261d-455f-8ccd-3abced6eff33" name="Default Changelist" comment="Tuuz">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="0c205453-261d-455f-8ccd-3abced6eff33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index/index1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index/index1.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +128,7 @@
       <workItem from="1610967294829" duration="49000" />
       <workItem from="1610967436018" duration="3000" />
       <workItem from="1610967456176" duration="8000" />
-      <workItem from="1610967492754" duration="2956000" />
+      <workItem from="1610967492754" duration="5741000" />
     </task>
     <task id="LOCAL-00001" summary="Tuuz">
       <created>1603964178316</created>
@@ -254,7 +249,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610983388229</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Tuuz">
+      <created>1610986056893</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610986056893</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Tuuz">
+      <created>1610986125347</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1610986125347</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Tuuz">
+      <created>1610986169460</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1610986169460</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,13 +301,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="815" y="284" key="AndroidProcessChooserDialog/0.0.1920.1040/1920.0.1680.1010/0.-1080.1920.1040/1920.-1080.1920.1040@0.0.1920.1040" timestamp="1610967556634" />
-    <state x="483" y="126" key="CommitChangelistDialog2" timestamp="1610986164515">
+    <state x="483" y="126" key="CommitChangelistDialog2" timestamp="1610986168666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1605778146970" />
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610713031424" />
     <state x="483" y="126" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1010/0.-1080.1920.1040/1920.-1080.1920.1040@0.0.1920.1040" timestamp="1610967585974" />
-    <state x="483" y="126" key="CommitChangelistDialog2/1920.0.1680.1010/0.-1080.1920.1040/1920.-1080.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610986164515" />
+    <state x="483" y="126" key="CommitChangelistDialog2/1920.0.1680.1010/0.-1080.1920.1040/1920.-1080.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610986168666" />
     <state x="2343" y="122" key="CommitChangelistDialog2/1920.0.1680.1010/0.-1080.1920.1040/1920.-1080.1920.1040/0.0.1920.1040@1920.0.1680.1010" timestamp="1610983387270" />
     <state x="750" y="299" key="FileChooserDialogImpl" timestamp="1610715807658">
       <screen x="0" y="0" width="1920" height="1040" />

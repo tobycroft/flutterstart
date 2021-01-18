@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Index1 extends StatefulWidget {
@@ -16,6 +17,8 @@ class _Index1 extends State<Index1> {
       appBar: AppBar(
         title: Text("data"),
         backgroundColor: Colors.black,
+        centerTitle: true,
+        actions: [FlatButton(onPressed: null, child: Icon(Icons.arrow_back))],
       ),
       body: Center(
         child: ListView.builder(
