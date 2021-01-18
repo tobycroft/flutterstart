@@ -6,13 +6,10 @@ class Index1 extends StatefulWidget {
   Index1(this._title);
 
   @override
-  _Index1 createState()=>_Index1();
-
+  _Index1 createState() => _Index1();
 }
 
 class _Index1 extends State<Index1> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +17,13 @@ class _Index1 extends State<Index1> {
         title: Text("data"),
         backgroundColor: Colors.black,
       ),
-      body: MaterialApp(),
+      body: Center(
+        child: ListView.builder(
+          itemBuilder: (BuildContext context, int index) =>
+              EntryItem(data[index]),
+          itemCount: data.length,
+        ),
+      ),
     );
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
