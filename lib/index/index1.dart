@@ -1,50 +1,69 @@
 import 'package:flutter/material.dart';
 
-class Index1 extends StatefulWidget {
-  String _title;
 
-  Index1(this._title);
-
-  @override
-  _Index1Widget createState() => _Index1Widget();
-}
-
-class _Index1Widget extends State<Index1> {
-  BuildContext context;
+class Index1 extends StatelessWidget {
+  const Index1({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    this.context = context;
-    return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              "",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
-        ),
-      ),
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
+      itemCount: data.length,
     );
   }
 }
 
-Widget chipDesign(String label, Color color) => Container(
-    child: Chip(
-      label: Text(
-        label,
-        style: TextStyle(color: Colors.white),
-      ),
-      backgroundColor: color,
-      elevation: 4,
-      shadowColor: Colors.grey,
-      padding: EdgeInsets.all(4),
-    ),
-    margin: EdgeInsets.only(left: 12, right: 12, top: 2, bottom: 2));
+// One entry in the multilevel list displayed by this app.
+class Entry {
+  const Entry(this.title, [this.children = const <Entry>[]]);
 
-Container divider(BuildContext context) => Container(
-      child: Divider(),
-      margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
+  final String title;
+  final List<Entry> children;
+}
+
+// Data to display.
+const List<Entry> data = <Entry>[
+  Entry(
+    'Chapter A',
+    <Entry>[
+      Entry(
+        'Section A0',
+        <Entry>[
+          Entry('Item A0.1'),
+          Entry('Item A0.2'),
+        ],
+      ),
+      Entry('Section A1'),
+      Entry('Section A2'),
+    ],
+  ),
+  Entry(
+    'Chapter B',
+    <Entry>[
+      Entry('Section B0'),
+      Entry('Section B1'),
+    ],
+  ),
+];
+
+// Displays one Entry. If the entry has children then it's displayed
+// with an ExpansionTile.
+class EntryItem extends StatelessWidget {
+  const EntryItem(this.entry);
+
+  final Entry entry;
+
+  Widget _buildTiles(Entry root) {
+    if (root.children.isEmpty) return ListTile(title: Text(root.title));
+    return ExpansionTile(
+      key: PageStorageKey<Entry>(root),
+      title: Text(root.title),
+      children: root.children.map(_buildTiles).toList(),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _buildTiles(entry);
+  }
+}

@@ -80,7 +80,7 @@ class BotomeMenumPageState extends State<BotomeMenumPage> {
 
   //点击导航项是要显示的页面
   final pages = [
-    Index1("首页"),
+    Index1(),
     ChildItemView("发现"),
     ChildItemView("动态"),
     ChildItemView("我的")
