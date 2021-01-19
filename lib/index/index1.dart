@@ -10,17 +10,19 @@ class Index1 extends StatefulWidget {
   Index1(this._title);
 
   @override
-
-  _Index1 createState() => _Index1();
+  _Index1 createState() => _Index1(this._title);
 }
 
 class _Index1 extends State<Index1> {
-  @override
+  String _title;
 
+  _Index1(this._title);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("data"),
+        title: Text(this._title),
         backgroundColor: Colors.black,
         centerTitle: true,
         actions: <Widget>[

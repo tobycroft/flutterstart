@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstart/tuuz/win/close.dart';
+import 'package:flutterstart/tuuz/button/button.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -22,16 +22,7 @@ class _login extends State<Login> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        leading: FlatButton(
-          padding: EdgeInsets.only(right: 40, top: 5),
-          child: Text(
-            "<返回",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () {
-            Tuuz_win().Close(context);
-          },
-        ),
+        leading: Tuuz_Button().BackWithWord(context),
       ),
     );
   }

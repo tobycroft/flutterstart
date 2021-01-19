@@ -17,6 +17,7 @@ class Tuuz_Button {
       child: Text(
         "<返回",
         style: TextStyle(color: Colors.white, fontSize: 19),
+        textAlign: TextAlign.start,
       ),
       onPressed: () {
         Tuuz_win().Close(context);
