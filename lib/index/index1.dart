@@ -11,14 +11,41 @@ class Index1 extends StatefulWidget {
 }
 
 class _Index1 extends State<Index1> {
+  SelectView(IconData icon, String text, String id) {
+    return new PopupMenuItem<String>(
+        value: id,
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            new Icon(icon, color: Colors.blue),
+            new Text(text),
+          ],
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("data"),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey,
         centerTitle: true,
-        actions: [FlatButton(onPressed: null, child: Icon(Icons.arrow_back))],
+        leading: BackButton(),
+        actions: <Widget>[
+          // new IconButton(
+          //     icon: new Icon(
+          //       Icons.menu,
+          //       color: Colors.white,
+          //     ),
+          //     onPressed: null),
+          PopupMenuButton(
+              icon: Icon(Icons.menu),
+              itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+                    this.SelectView(Icons.message, "aaaaaaa", "1"),
+                    this.SelectView(Icons.group_add, "bbbbbbb", "1"),
+                    this.SelectView(Icons.zoom_out, "cccccccc", "1"),
+                  ])
+        ],
       ),
       body: Center(
         child: ListView.builder(
