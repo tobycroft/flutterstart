@@ -8,8 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index/index1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index/index1.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tuuz/button/button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tuuz/button/button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tuuz/alert/android.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tuuz/alert/ios.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tuuz/alert/ios.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,7 @@
       <workItem from="1605773576583" duration="3437000" />
       <workItem from="1606099615500" duration="1579000" />
       <workItem from="1610699866636" duration="1629000" />
-      <workItem from="1610713572400" duration="23264000" />
+      <workItem from="1610713572400" duration="23891000" />
     </task>
     <task id="LOCAL-00001" summary="Tuuz">
       <created>1603964178316</created>
@@ -356,7 +356,35 @@
       <option name="project" value="LOCAL" />
       <updated>1611046485611</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Tuuz">
+      <created>1611046884663</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1611046884663</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Tuuz">
+      <created>1611047074431</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1611047074431</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Tuuz">
+      <created>1611047446690</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1611047446690</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Tuuz">
+      <created>1611047472015</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1611047472015</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,11 +411,15 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="454" y="221" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1603961568974" />
-    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1611046485463">
+    <state x="578" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611047212470">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1611047212470" />
+    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1611047471844">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-484.2560.1415@0.0.1680.1050" timestamp="1611037001482" />
-    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1611046485463" />
+    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1611047471844" />
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610967780819" />
     <state x="705" y="425" key="Github.ShareDialog" timestamp="1603877322796">
       <screen x="0" y="0" width="1680" height="1050" />

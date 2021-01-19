@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
+import 'package:flutterstart/tuuz/win/close.dart';
 
 class Index1 extends StatefulWidget {
   String _title;
@@ -40,24 +41,24 @@ class _Index1 extends State<Index1> {
               switch (value) {
                 case "login":
                   {
-                    Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext contexts) => new Login()));
+                    Tuuz_win().Open(context, Login());
                     break;
                   }
-
+                case "B":
                   {
-                    Alert_IOS().Simple(context, "BB", "内容", () {});
+                    Tuuz_alert().Alert(context, "title", "content");
                     break;
                   }
 
                 case "C":
                   {
-                    Alert_IOS().Simple(context, "CC", "内容", () {});
+                    Tuuz_alert().Simple(context, "CC", "内容", () {});
                     break;
                   }
 
                 default:
                   {
-                    Alert_IOS().Simple(context, "SS", "内容", () {});
+                    Tuuz_alert().Simple(context, "SS", "内容", () {});
                     break;
                   }
               }

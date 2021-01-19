@@ -23,6 +23,9 @@ class _login extends State<Login> {
           ),
         ),
         leading: Tuuz_Button().BackWithWord(context),
+        actions: [
+          IconButton(icon: Icon(Icons.help,color: Colors.white,),color: Colors.white, onPressed: (){})
+        ],
       ),
     );
   }
