@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/tuuz/alert/ios.dart';
+import 'package:flutterstart/tuuz/popup/popupmenu.dart';
 
 class Index1 extends StatefulWidget {
   String _title;
@@ -10,21 +12,7 @@ class Index1 extends StatefulWidget {
   _Index1 createState() => _Index1();
 }
 
-SelectView(IconData icon, String text, String id) {
-  return new PopupMenuItem<String>(
-      value: id,
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          new Icon(icon, color: Colors.blue),
-          new Text(text),
-        ],
-      ));
-}
-
 class _Index1 extends State<Index1> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,34 +25,20 @@ class _Index1 extends State<Index1> {
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              SelectView(Icons.message, "aaaaaaa", "A"),
-              SelectView(Icons.group_add, "bbbbbbb", "B"),
-              SelectView(Icons.zoom_out, "cccccccc", "C"),
+              Tuuz_Popup().Menu(Icons.message, "aaaaaaa", "A"),
+              Tuuz_Popup().Menu(Icons.group_add, "bbbbbbb", "B"),
+              Tuuz_Popup().Menu(Icons.zoom_out, "cccccccc", "C"),
             ],
             onSelected: (String action) {
               print(action);
-              showCupertinoDialog(
-                  context: this.context,
-                  builder: (context) => new CupertinoAlertDialog(
-                        title: Text("123"),
-                        content: Text("cont"),
-                        actions: <Widget>[
-                          CupertinoButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text("关闭")),
-                          CupertinoButton(onPressed: () {}, child: Text("确定")),
-                        ],
-                      ));
+              Alert_IOS().Simple(context, "测试", "内容", () {});
             },
           ),
         ],
       ),
       body: Center(
         child: ListView.builder(
-          itemBuilder: (BuildContext context, int index) =>
-              EntryItem(data[index]),
+          itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
           itemCount: data.length,
         ),
       ),
