@@ -25,13 +25,38 @@ class _Index1 extends State<Index1> {
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              Tuuz_Popup().Menu(Icons.message, "aaaaaaa", "A"),
-              Tuuz_Popup().Menu(Icons.group_add, "bbbbbbb", "B"),
-              Tuuz_Popup().Menu(Icons.zoom_out, "cccccccc", "C"),
+              Tuuz_Popup().MenuItem(Icons.message, "aaaaaaa", "A"),
+              Tuuz_Popup().MenuItem(Icons.group_add, "bbbbbbb", "B"),
+              Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "C"),
+              Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "D"),
             ],
-            onSelected: (String action) {
-              print(action);
-              Alert_IOS().Simple(context, "测试", "内容", () {});
+            onSelected: (String value) {
+              print(value);
+              switch (value) {
+                case "A":
+                  {
+                    Alert_IOS().Simple(context, "AA", "内容", () {});
+                    break;
+                  }
+
+                case "B":
+                  {
+                    Alert_IOS().Simple(context, "BB", "内容", () {});
+                    break;
+                  }
+
+                case "C":
+                  {
+                    Alert_IOS().Simple(context, "CC", "内容", () {});
+                    break;
+                  }
+
+                default:
+                  {
+                    Alert_IOS().Simple(context, "SS", "内容", () {});
+                    break;
+                  }
+              }
             },
           ),
         ],
