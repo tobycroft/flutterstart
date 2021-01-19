@@ -10,43 +10,54 @@ class Index1 extends StatefulWidget {
   _Index1 createState() => _Index1();
 }
 
+SelectView(IconData icon, String text, String id) {
+  return new PopupMenuItem<String>(
+      value: id,
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          new Icon(icon, color: Colors.blue),
+          new Text(text),
+        ],
+      ));
+}
+
 class _Index1 extends State<Index1> {
-  SelectView(IconData icon, String text, String id) {
-    return new PopupMenuItem<String>(
-        value: id,
-        child: new Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            new Icon(icon, color: Colors.blue),
-            new Text(text),
-          ],
-        ));
-  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("data"),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
         centerTitle: true,
-        leading: BackButton(),
         actions: <Widget>[
-          // new IconButton(
-          //     icon: new Icon(
-          //       Icons.menu,
-          //       color: Colors.white,
-          //     ),
-          //     onPressed: null),
           PopupMenuButton(
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              this.SelectView(Icons.message, "aaaaaaa", "A"),
-              this.SelectView(Icons.group_add, "bbbbbbb", "B"),
-              this.SelectView(Icons.zoom_out, "cccccccc", "C"),
+              SelectView(Icons.message, "aaaaaaa", "A"),
+              SelectView(Icons.group_add, "bbbbbbb", "B"),
+              SelectView(Icons.zoom_out, "cccccccc", "C"),
             ],
-            onSelected: (String action) {},
+            onSelected: (String action) {
+              print(action);
+              showCupertinoDialog(
+                  context: this.context,
+                  builder: (context) => new CupertinoAlertDialog(
+                        title: Text("123"),
+                        content: Text("cont"),
+                        actions: <Widget>[
+                          CupertinoButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text("关闭")),
+                          CupertinoButton(onPressed: () {}, child: Text("确定")),
+                        ],
+                      ));
+            },
           ),
         ],
       ),
