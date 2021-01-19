@@ -6,7 +6,7 @@ class Tuuz_Popup {
     return new PopupMenuItem<String>(
       value: value,
       child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           new Icon(icon, color: Colors.blue),
           new Text(text),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/index/help/help.dart';
 import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
@@ -32,8 +33,8 @@ class _Index1 extends State<Index1> {
             offset: Offset(100, 100),
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
               Tuuz_Popup().MenuItem(Icons.message, "登录", "login"),
-              Tuuz_Popup().MenuItem(Icons.group_add, "bbbbbbb", "B"),
-              Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "C"),
+              Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
+              Tuuz_Popup().MenuItem(Icons.qr_code, "扫码", "C"),
               Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "D"),
             ],
             onSelected: (String value) {
@@ -44,9 +45,9 @@ class _Index1 extends State<Index1> {
                     Tuuz_win().Open(context, Login());
                     break;
                   }
-                case "B":
+                case "index_help":
                   {
-                    Tuuz_alert().Alert(context, "title", "content");
+                    Tuuz_win().Open(context, Index_Help());
                     break;
                   }
 
