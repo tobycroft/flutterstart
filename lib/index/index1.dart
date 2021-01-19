@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
-import 'package:flutterstart/tuuz/win/close.dart';
 
 class Index1 extends StatefulWidget {
   String _title;
@@ -10,11 +10,13 @@ class Index1 extends StatefulWidget {
   Index1(this._title);
 
   @override
+
   _Index1 createState() => _Index1();
 }
 
 class _Index1 extends State<Index1> {
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,9 +27,8 @@ class _Index1 extends State<Index1> {
           PopupMenuButton(
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
-            itemBuilder: (BuildContext context) =>
-            <PopupMenuItem<String>>[
-              Tuuz_Popup().MenuItem(Icons.message, "aaaaaaa", "A"),
+            itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+              Tuuz_Popup().MenuItem(Icons.message, "登录", "login"),
               Tuuz_Popup().MenuItem(Icons.group_add, "bbbbbbb", "B"),
               Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "C"),
               Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "D"),
@@ -35,17 +36,12 @@ class _Index1 extends State<Index1> {
             onSelected: (String value) {
               print(value);
               switch (value) {
-                case "A":
+                case "login":
                   {
-                    // Alert_IOS().Simple(context, "AA", "内容", () {});
-                    Alert_IOS().All(context, "title", "content", [Alert_IOS().ButtonBuilder(() {
-                      Tuuz_win().Close(context);
-                    }, Text("asd"))
-                    ]);
+                    Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext contexts) => new Login()));
                     break;
                   }
 
-                case "B":
                   {
                     Alert_IOS().Simple(context, "BB", "内容", () {});
                     break;
