@@ -21,6 +21,6 @@ class Closebutton {
       onPressed: () {
         Tuuz_win().Close(context);
       },
-    )
+    );
   }
 }
