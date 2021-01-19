@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
+import 'package:flutterstart/tuuz/win/close.dart';
 
 class Index1 extends StatefulWidget {
   String _title;
@@ -24,7 +25,8 @@ class _Index1 extends State<Index1> {
           PopupMenuButton(
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
-            itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+            itemBuilder: (BuildContext context) =>
+            <PopupMenuItem<String>>[
               Tuuz_Popup().MenuItem(Icons.message, "aaaaaaa", "A"),
               Tuuz_Popup().MenuItem(Icons.group_add, "bbbbbbb", "B"),
               Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "C"),
@@ -35,7 +37,11 @@ class _Index1 extends State<Index1> {
               switch (value) {
                 case "A":
                   {
-                    Alert_IOS().Simple(context, "AA", "内容", () {});
+                    // Alert_IOS().Simple(context, "AA", "内容", () {});
+                    Alert_IOS().All(context, "title", "content", [Alert_IOS().ButtonBuilder(() {
+                      Tuuz_win().Close(context);
+                    }, Text("asd"))
+                    ]);
                     break;
                   }
 
