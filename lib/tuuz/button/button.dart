@@ -15,7 +15,7 @@ class Tuuz_Button {
     return FlatButton(
       padding: EdgeInsets.only(right: 40),
       child: Text(
-        "<返回",
+        "⇦ 返回",
         style: TextStyle(color: Colors.white, fontSize: 19),
         textAlign: TextAlign.start,
       ),

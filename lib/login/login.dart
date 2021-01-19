@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstart/login/help.dart';
 import 'package:flutterstart/tuuz/button/button.dart';
+import 'package:flutterstart/tuuz/win/close.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -12,7 +14,7 @@ class _login extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leadingWidth: 100,
+        leadingWidth: 120,
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(
@@ -24,7 +26,15 @@ class _login extends State<Login> {
         ),
         leading: Tuuz_Button().BackWithWord(context),
         actions: [
-          IconButton(icon: Icon(Icons.help,color: Colors.white,),color: Colors.white, onPressed: (){})
+          IconButton(
+              icon: Icon(
+                Icons.help,
+                color: Colors.white,
+              ),
+              color: Colors.white,
+              onPressed: () {
+                Tuuz_win().Open(context, Help());
+              })
         ],
       ),
     );
