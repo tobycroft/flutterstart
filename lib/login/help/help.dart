@@ -14,7 +14,7 @@ class _help extends State<Help> {
         title: Text("帮助"),
         backgroundColor: Colors.black,
       ),
-      body: Row(
+      body: Column(
         children: [
           Text("       aaa",
               style: TextStyle(
