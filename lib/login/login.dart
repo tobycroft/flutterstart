@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstart/login/help.dart';
+import 'package:flutterstart/login/help/help.dart';
 import 'package:flutterstart/tuuz/button/button.dart';
 import 'package:flutterstart/tuuz/win/close.dart';
 
