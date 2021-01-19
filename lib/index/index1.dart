@@ -39,12 +39,15 @@ class _Index1 extends State<Index1> {
           //     ),
           //     onPressed: null),
           PopupMenuButton(
-              icon: Icon(Icons.menu),
-              itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-                    this.SelectView(Icons.message, "aaaaaaa", "1"),
-                    this.SelectView(Icons.group_add, "bbbbbbb", "1"),
-                    this.SelectView(Icons.zoom_out, "cccccccc", "1"),
-                  ])
+            icon: Icon(Icons.menu),
+            offset: Offset(100, 100),
+            itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+              this.SelectView(Icons.message, "aaaaaaa", "A"),
+              this.SelectView(Icons.group_add, "bbbbbbb", "B"),
+              this.SelectView(Icons.zoom_out, "cccccccc", "C"),
+            ],
+            onSelected: (String action) {},
+          ),
         ],
       ),
       body: Center(
