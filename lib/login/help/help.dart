@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/config/app.dart';
 
 class Help extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _help extends State<Help> {
         children: [
           Text("       aaa",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: Config().Font_Size,
               )),
           Text("bbb"),
         ],
