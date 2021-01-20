@@ -1,11 +1,15 @@
 // import 'dart:html';
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterstart/app/login/help/help.dart';
 import 'package:flutterstart/config/app.dart';
 import 'package:flutterstart/config/res.dart';
+import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/button/button.dart';
+import 'package:flutterstart/tuuz/net/net.dart';
 import 'package:flutterstart/tuuz/win/close.dart';
 
 class Login extends StatefulWidget {
@@ -96,9 +100,8 @@ class _login extends State<Login> {
                     color: Colors.white,
                   ),
                 ),
-                onSaved: (String value) {
+                onChanged: (String value) {
                   this.qq = value;
-                  print('qq=$qq');
                 },
               ),
               SizedBox(
@@ -129,9 +132,8 @@ class _login extends State<Login> {
                     color: Colors.white,
                   ),
                 ),
-                onSaved: (String value) {
-                  this.qq = value;
-                  print('qq=$qq');
+                onChanged: (String value) {
+                  this.password = value;
                 },
               ),
               SizedBox(
@@ -163,8 +165,22 @@ class _login extends State<Login> {
                 minWidth: 300,
                 height: 50,
                 shape: RoundedRectangleBorder(side: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50))),
-                onPressed: () {},
                 child: Text('登录'),
+                onPressed: () async {
+                  Map<String, dynamic> post = {
+                    "qq": this.qq,
+                    "password": this.password,
+                  };
+                  String ret = await Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
+                  var json = jsonDecode(ret);
+                  // print(json["code"].toString());
+                  if (json["code"] == 0) {
+                    Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！");
+                  } else {
+                    Alert().Confirm(context, "登录失败", json["echo"]);
+                  }
+                  print(int.parse("0"));
+                },
               ),
             ],
           ),
