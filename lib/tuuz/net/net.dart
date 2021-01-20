@@ -77,4 +77,27 @@ class Net {
     var ret = await resp.transform(utf8.decoder).join();
     return ret;
   }
+
+  Get(String url, path, Map<String, String> get, Map<String, String> header) async {
+    var http = new HttpClient();
+    http.findProxy = (url) {
+      return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+    };
+    var uri;
+    if (get == null || get.isEmpty) {
+      uri = new Uri.http(url, path);
+    } else {
+      uri = new Uri.http(url, path, get);
+    }
+    var req = await http.getUrl(uri);
+    if (header != null && !header.isEmpty) {
+      header.forEach((key, value) {
+        req.headers.add(key, value);
+      });
+    }
+    req.headers.contentType = ContentType.parse("application/x-www-form-urlencoded");
+    var resp = await req.close();
+    var ret = await resp.transform(utf8.decoder).join();
+    return ret;
+  }
 }
