@@ -20,7 +20,7 @@ class Tuuz_Button {
         textAlign: TextAlign.start,
       ),
       onPressed: () {
-        Tuuz_win().Close(context);
+        Window().Close(context);
       },
     );
   }
@@ -33,7 +33,7 @@ class Tuuz_Button {
         style: TextStyle(color: Colors.white, fontSize: 19),
       ),
       onPressed: () {
-        Tuuz_win().Close(context);
+        Window().Close(context);
       },
     );
   }

@@ -33,7 +33,7 @@ class _login extends State<Login> {
               ),
               color: Colors.white,
               onPressed: () {
-                Tuuz_win().Open(context, Help());
+                Window().Open(context, Help());
               })
         ],
       ),

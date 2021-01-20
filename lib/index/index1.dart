@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -47,31 +48,40 @@ class _Index1 extends State<Index1> {
               switch (value) {
                 case "login":
                   {
-                    Tuuz_win().Open(context, Login());
+                    Window().Open(context, Login());
                     break;
                   }
                 case "index_help":
                   {
-                    Tuuz_win().Open(context, Index_Help());
+                    Window().Open(context, Index_Help());
                     break;
                   }
 
                 case "scanner":
                   {
-                    Tuuz_alert().Simple(context, "扫码测试", "Scanner", () {});
+                    Alert().Simple(context, "扫码测试", "Scanner", () {});
                     break;
                   }
 
                 case "httptest":
                   {
-                    // _getData();
-                    Net().Post(Config().Url, "sss", null, null, null);
+                    Map<String, String> post = {
+                      "qq": "123456789",
+                      "password": "123456789",
+                    };
+                    var ret = Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
+                    var json;
+                    ret.then((value) => {
+                       json=jsonDecode(value),
+                      print(json["code"]),
+                        });
+
                     break;
                   }
 
                 default:
                   {
-                    Tuuz_alert().Simple(context, "SS", "内容", () {});
+                    Alert().Simple(context, "SS", "内容", () {});
                     break;
                   }
               }
