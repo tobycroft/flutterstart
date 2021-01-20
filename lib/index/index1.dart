@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/config/app.dart';
 import 'package:flutterstart/index/help/help.dart';
 import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
@@ -35,7 +38,7 @@ class _Index1 extends State<Index1> {
               Tuuz_Popup().MenuItem(Icons.message, "登录", "login"),
               Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
               Tuuz_Popup().MenuItem(Icons.qr_code, "扫码", "C"),
-              Tuuz_Popup().MenuItem(Icons.zoom_out, "cccccccc", "D"),
+              Tuuz_Popup().MenuItem(Icons.zoom_out, "httptest", "D"),
             ],
             onSelected: (String value) {
               print(value);
@@ -53,7 +56,15 @@ class _Index1 extends State<Index1> {
 
                 case "C":
                   {
-                    Tuuz_alert().Simple(context, "CC", "内容", () {});
+                    Tuuz_alert().Simple(context, "扫码测试", "Scanner", () {});
+                    break;
+                  }
+
+                case "D":
+                  {
+                    var http =new HttpClient();
+                    var post=Map()
+                    var uri=new Uri.http(Config().Url, "/v1/index/login/login");
                     break;
                   }
 
