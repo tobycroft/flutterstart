@@ -93,22 +93,6 @@ class _Index1 extends State<Index1> {
   }
 }
 
-_getData() async {
-  var http = new HttpClient();
-  http.findProxy = (url) {
-    return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
-  };
-  Map<String, String> post = {
-    "qq": "qq",
-    "password": "password",
-  };
-  var uri = new Uri.http(Config().Url, "/v1/index/login/login", post);
-  var req = await http.postUrl(uri);
-  var resp = await req.close();
-  var ret = await resp.transform(utf8.decoder).join();
-  print(ret);
-}
-
 // One entry in the multilevel list displayed by this app.
 class Entry {
   const Entry(this.title, [this.children = const <Entry>[]]);
