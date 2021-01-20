@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,7 @@ import 'package:flutterstart/config/app.dart';
 import 'package:flutterstart/index/help/help.dart';
 import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
+import 'package:flutterstart/tuuz/net/net.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
 import 'package:flutterstart/tuuz/win/close.dart';
 
@@ -37,8 +39,8 @@ class _Index1 extends State<Index1> {
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
               Tuuz_Popup().MenuItem(Icons.message, "登录", "login"),
               Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
-              Tuuz_Popup().MenuItem(Icons.qr_code, "扫码", "C"),
-              Tuuz_Popup().MenuItem(Icons.zoom_out, "httptest", "D"),
+              Tuuz_Popup().MenuItem(Icons.qr_code, "扫码", "scanner"),
+              Tuuz_Popup().MenuItem(Icons.zoom_out, "httptest", "httptest"),
             ],
             onSelected: (String value) {
               print(value);
@@ -54,17 +56,16 @@ class _Index1 extends State<Index1> {
                     break;
                   }
 
-                case "C":
+                case "scanner":
                   {
                     Tuuz_alert().Simple(context, "扫码测试", "Scanner", () {});
                     break;
                   }
 
-                case "D":
+                case "httptest":
                   {
-                    var http =new HttpClient();
-                    var post=Map()
-                    var uri=new Uri.http(Config().Url, "/v1/index/login/login");
+                    // _getData();
+                    Net().Post(Config().Url, "sss", null, null, null);
                     break;
                   }
 
@@ -90,6 +91,22 @@ class _Index1 extends State<Index1> {
       itemCount: data.length,
     );
   }
+}
+
+_getData() async {
+  var http = new HttpClient();
+  http.findProxy = (url) {
+    return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+  };
+  Map<String, String> post = {
+    "qq": "qq",
+    "password": "password",
+  };
+  var uri = new Uri.http(Config().Url, "/v1/index/login/login", post);
+  var req = await http.postUrl(uri);
+  var resp = await req.close();
+  var ret = await resp.transform(utf8.decoder).join();
+  print(ret);
 }
 
 // One entry in the multilevel list displayed by this app.
