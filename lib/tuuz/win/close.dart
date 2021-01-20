@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Tuuz_win {
+class Window {
   //关闭当前页面或者窗口
   Close(BuildContext context) {
     return Navigator.pop(context);
