@@ -4,9 +4,9 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/app/help/help.dart';
+import 'package:flutterstart/app/login/login.dart';
 import 'package:flutterstart/config/app.dart';
-import 'package:flutterstart/index/help/help.dart';
-import 'package:flutterstart/login/login.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/net/net.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';

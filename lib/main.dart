@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterstart/index/index1.dart';
+import 'package:flutterstart/app/index1.dart';
 import 'package:flutterstart/route.dart';
 
 void main() {
