@@ -173,13 +173,11 @@ class _login extends State<Login> {
                   };
                   String ret = await Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
                   var json = jsonDecode(ret);
-                  // print(json["code"].toString());
                   if (json["code"] == 0) {
                     Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！");
                   } else {
                     Alert().Confirm(context, "登录失败", json["echo"]);
                   }
-                  print(int.parse("0"));
                 },
               ),
             ],
