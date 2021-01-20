@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Tuuz_alert {
+class Alert {
   All(BuildContext context, String title, String content, List<Widget> ButtonBuilder) {
     showCupertinoDialog(
         context: context,
@@ -29,7 +29,7 @@ class Tuuz_alert {
             ));
   }
 
-  Alert(BuildContext context, String title, String content) {
+  Confirm(BuildContext context, String title, String content) {
     showCupertinoDialog(
         context: context,
         builder: (context) => new CupertinoAlertDialog(
