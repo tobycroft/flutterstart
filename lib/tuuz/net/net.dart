@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutterstart/config/app.dart';
 
 class Net {
-  Post(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
+  Future<String> Post(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
     var http = new HttpClient();
     http.findProxy = (url) {
       return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
@@ -30,7 +29,7 @@ class Net {
     return ret;
   }
 
-  PostRaw(String url, path, Map<String, String> get, dynamic post, Map<String, String> header) async {
+  Future<String> PostRaw(String url, path, Map<String, String> get, dynamic post, Map<String, String> header) async {
     var http = new HttpClient();
     http.findProxy = (url) {
       return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
@@ -54,7 +53,7 @@ class Net {
     return ret;
   }
 
-  PostJson(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
+  Future<String> PostJson(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
     var http = new HttpClient();
     http.findProxy = (url) {
       return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
@@ -78,7 +77,7 @@ class Net {
     return ret;
   }
 
-  Get(String url, path, Map<String, String> get, Map<String, String> header) async {
+  Future<String> Get(String url, path, Map<String, String> get, Map<String, String> header) async {
     var http = new HttpClient();
     http.findProxy = (url) {
       return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
