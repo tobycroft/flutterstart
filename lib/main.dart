@@ -21,7 +21,6 @@ class Init {
       Auth().Is_login = false;
       return;
     }
-
   }
 }
 
