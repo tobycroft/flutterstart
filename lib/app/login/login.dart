@@ -1,6 +1,7 @@
 // import 'dart:html';
 
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +11,7 @@ import 'package:flutterstart/config/res.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/button/button.dart';
 import 'package:flutterstart/tuuz/net/net.dart';
+import 'package:flutterstart/tuuz/storage/storage.dart';
 import 'package:flutterstart/tuuz/win/close.dart';
 
 class Login extends StatefulWidget {
@@ -174,6 +176,9 @@ class _login extends State<Login> {
                   String ret = await Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
                   var json = jsonDecode(ret);
                   if (json["code"] == 0) {
+                    Storage().Set("__uid__", json["data"]["uid"]);
+                    Storage().Set("__password__", this.password);
+                    Storage().Set("__token__", json["data"]["token"]);
                     Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！");
                   } else {
                     Alert().Confirm(context, "登录失败", json["echo"]);
