@@ -43,7 +43,7 @@ class _login extends State<Login> {
               ),
               color: Colors.white,
               onPressed: () {
-                Window().Open(context, Help());
+                Windows().Open(context, Help());
               })
         ],
       ),
@@ -172,12 +172,12 @@ class _login extends State<Login> {
                   String ret = await Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
                   var json = jsonDecode(ret);
                   if (json["code"] == 0) {
-                    Storage().Set("__uid__", json["data"]["uid"]);
-                    Storage().Set("__password__", this.password);
-                    Storage().Set("__token__", json["data"]["token"]);
-                    Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！");
+                    Storage().Set("__uid__", json["data"]["uid"].toString());
+                    Storage().Set("__password__", this.password.toString());
+                    Storage().Set("__token__", json["data"]["token"].toString());
+                    Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！", Windows().Close(context));
                   } else {
-                    Alert().Confirm(context, "登录失败", json["echo"]);
+                    Alert().Confirm(context, "登录失败", json["echo"], null);
                   }
                 },
               ),
