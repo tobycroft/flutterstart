@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterstart/app/login/help/help.dart';
+import 'package:flutterstart/config/auth.dart';
 import 'package:flutterstart/config/config.dart';
 import 'package:flutterstart/config/res.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
@@ -175,6 +176,7 @@ class _login extends State<Login> {
                     Storage().Set("__uid__", json["data"]["uid"].toString());
                     Storage().Set("__password__", this.password.toString());
                     Storage().Set("__token__", json["data"]["token"].toString());
+                    Auth().Is_login=true;
                     Alert().Confirm(context, "登录成功", json["data"]["uid"].toString() + "欢迎回来！", Windows().Close(context));
                   } else {
                     Alert().Confirm(context, "登录失败", json["echo"], null);

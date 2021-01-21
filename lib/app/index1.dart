@@ -48,12 +48,12 @@ class _Index1 extends State<Index1> {
               switch (value) {
                 case "login":
                   {
-                    Window().Open(context, Login());
+                    Windows().Open(context, Login());
                     break;
                   }
                 case "index_help":
                   {
-                    Window().Open(context, Index_Help());
+                    Windows().Open(context, Index_Help());
                     break;
                   }
 
@@ -65,18 +65,28 @@ class _Index1 extends State<Index1> {
 
                 case "httptest":
                   {
-                    void send() async {
+                    void get_list() async {
+                      setState(() {
+                        bot_datas = [];
+                      });
                       Map<String, String> post = {};
                       post["uid"] = await Storage().Get("__uid__");
                       post["token"] = await Storage().Get("__token__");
-                      var ret = Net().Post(Config().Url, "/v1/user/user/user_info", null, post, null);
-                      var json;
-                      ret.then((value) => {
-                            json = jsonDecode(value),
-                            print(json["code"]),
-                          });
+                      var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
+
+                      var json = jsonDecode(ret);
+                      if (json["code"] == 0) {
+                        List data = json["data"];
+                        data.forEach((value) {
+                          bot_datas.add(value);
+                        });
+                        setState(() {
+
+                        });
+                      }
                     }
-                    send();
+
+                    get_list();
                     break;
                   }
 
@@ -92,69 +102,55 @@ class _Index1 extends State<Index1> {
       ),
       body: Center(
         child: ListView.builder(
-          itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
-          itemCount: data.length,
+          itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
+          itemCount: bot_datas.length,
         ),
       ),
-    );
-    return ListView.builder(
-      itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
-      itemCount: data.length,
     );
   }
 }
 
-// One entry in the multilevel list displayed by this app.
-class Entry {
-  const Entry(this.title, [this.children = const <Entry>[]]);
-
-  final String title;
-  final List<Entry> children;
-}
-
-// Data to display.
-const List<Entry> data = <Entry>[
-  Entry(
-    'Chapter A',
-    <Entry>[
-      Entry(
-        'Section A0',
-        <Entry>[
-          Entry('Item A0.1'),
-          Entry('Item A0.2'),
-        ],
-      ),
-      Entry('Section A1'),
-      Entry('Section A2'),
-    ],
-  ),
-  Entry(
-    'Chapter B',
-    <Entry>[
-      Entry('Section B0'),
-      Entry('Section B1'),
-    ],
-  ),
-];
+List bot_datas = [];
 
 // Displays one Entry. If the entry has children then it's displayed
 // with an ExpansionTile.
-class EntryItem extends StatelessWidget {
-  const EntryItem(this.entry);
+class BotItem extends StatelessWidget {
+  var item;
 
-  final Entry entry;
+  BotItem(this.item);
 
-  Widget _buildTiles(Entry root) {
-    if (root.children.isEmpty) return ListTile(title: Text(root.title));
-    return ExpansionTile(
-      key: PageStorageKey<Entry>(root),
-      title: Text(root.title),
-      children: root.children.map(_buildTiles).toList(),
+  Widget _buildTiles(Map ret) {
+    if (ret == null) return ListTile();
+    return ListTile(
+      leading: CircleAvatar(
+        child: Image(image: NetworkImage(ret["img"])),
+      ),
+      title: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ret["cname"].toString(),
+                style: Config().Text_Style_default,
+              ),
+              Text(
+                ret["bot"].toString(),
+                style: Config().Text_Style_default,
+              )
+            ],
+          )
+        ],
+      ),
+      trailing: Text(
+        ret["date"].toString(),
+        style: Config().Text_Style_default,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return _buildTiles(entry);
+    return _buildTiles(item);
   }
 }
