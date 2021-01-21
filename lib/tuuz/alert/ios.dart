@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterstart/tuuz/win/close.dart';
 
 class Alert {
   All(BuildContext context, String title, String content, List<Widget> ButtonBuilder) {
@@ -29,7 +30,7 @@ class Alert {
             ));
   }
 
-  Confirm(BuildContext context, String title, String content) {
+  Confirm(BuildContext context, String title, String content, VoidCallback on_press) {
     showCupertinoDialog(
         context: context,
         builder: (context) => new CupertinoAlertDialog(
@@ -38,7 +39,12 @@ class Alert {
               actions: <Widget>[
                 CupertinoButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      if (on_press == null) {
+                        Windows().Close(context);
+                      }else{
+                        Windows().Close(context);
+                        on_press;
+                      }
                     },
                     child: Text("确认")),
               ],
