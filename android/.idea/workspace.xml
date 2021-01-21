@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c19e6d3c-98c8-4d3a-96bb-34eb8965af87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/key.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/config/auth.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/app/help/help.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app/help/help.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/app/index1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app/index1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/app/login/help/help.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app/login/help/help.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/app/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app/login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/config/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/config/config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/tuuz/net/net.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/tuuz/net/net.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +28,13 @@
   </component>
   <component name="ProjectId" id="1jXxHh5NQmZ0TmTftqM4mgWFaTW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SvnConfiguration">

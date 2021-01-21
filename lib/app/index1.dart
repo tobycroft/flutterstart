@@ -1,15 +1,15 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterstart/app/help/help.dart';
 import 'package:flutterstart/app/login/login.dart';
-import 'package:flutterstart/config/app.dart';
+import 'package:flutterstart/config/config.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/net/net.dart';
 import 'package:flutterstart/tuuz/popup/popupmenu.dart';
+import 'package:flutterstart/tuuz/storage/storage.dart';
 import 'package:flutterstart/tuuz/win/close.dart';
 
 class Index1 extends StatefulWidget {
@@ -65,17 +65,18 @@ class _Index1 extends State<Index1> {
 
                 case "httptest":
                   {
-                    Map<String, String> post = {
-                      "qq": "123456789",
-                      "password": "123456789",
-                    };
-                    var ret = Net().Post(Config().Url, "/v1/index/login/login", null, post, null);
-                    var json;
-                    ret.then((value) => {
-                       json=jsonDecode(value),
-                      print(json["code"]),
-                        });
-
+                    void send() async {
+                      Map<String, String> post = {};
+                      post["uid"] = await Storage().Get("__uid__");
+                      post["token"] = await Storage().Get("__token__");
+                      var ret = Net().Post(Config().Url, "/v1/user/user/user_info", null, post, null);
+                      var json;
+                      ret.then((value) => {
+                            json = jsonDecode(value),
+                            print(json["code"]),
+                          });
+                    }
+                    send();
                     break;
                   }
 

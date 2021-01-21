@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterstart/app/login/help/help.dart';
-import 'package:flutterstart/config/app.dart';
+import 'package:flutterstart/config/config.dart';
 import 'package:flutterstart/config/res.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/button/button.dart';

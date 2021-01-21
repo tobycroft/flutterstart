@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstart/app/index1.dart';
+import 'package:flutterstart/config/auth.dart';
 import 'package:flutterstart/route.dart';
+import 'package:flutterstart/tuuz/storage/storage.dart';
 
 void main() {
+  Init().init();
   runApp(MyApp());
+}
+
+class Init {
+  void init() async {}
+
+  void is_login() async {
+    if (!await Storage().Has("__uid__")) {
+      Auth().Is_login = false;
+      return;
+    }
+    if (!await Storage().Has("__token__")) {
+      Auth().Is_login = false;
+      return;
+    }
+
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -79,12 +98,7 @@ class BotomeMenumPageState extends State<BotomeMenumPage> {
   ];
 
   //点击导航项是要显示的页面
-  final pages = [
-    Index1("Flutter Start"),
-    ChildItemView("发现"),
-    ChildItemView("动态"),
-    ChildItemView("我的")
-  ];
+  final pages = [Index1("Flutter Start"), ChildItemView("发现"), ChildItemView("动态"), ChildItemView("我的")];
 
   Widget buildBottomTabScaffold() {
     return Scaffold(
