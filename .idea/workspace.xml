@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c205453-261d-455f-8ccd-3abced6eff33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/app/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/app/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/key.jks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gen/GradleException.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/config/auth.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/help/help.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/help/help.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/index1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/index1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/login/help/help.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login/help/help.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/config/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/config/config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tuuz/net/net.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tuuz/net/net.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,14 +130,7 @@
       <workItem from="1610713572400" duration="28756000" />
       <workItem from="1611113353865" duration="20000" />
       <workItem from="1611113397447" duration="23108000" />
-      <workItem from="1611217980951" duration="1188000" />
-    </task>
-    <task id="LOCAL-00005" summary="Tuuz">
-      <created>1605688707270</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1605688707270</updated>
+      <workItem from="1611217980951" duration="1393000" />
     </task>
     <task id="LOCAL-00006" summary="Tuuz">
       <created>1605691714128</created>
@@ -495,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611214803874</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Tuuz">
+      <created>1611219351013</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1611219351015</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,9 +519,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1611047212470" />
-    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1611214803479">
+    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1611219350655">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-390.2560.1440@0.0.1680.1050" timestamp="1611219350655" />
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-484.2560.1415@0.0.1680.1050" timestamp="1611037001482" />
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050/-2560.-509.2560.1440@0.0.1680.1050" timestamp="1611214803479" />
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610967780819" />
