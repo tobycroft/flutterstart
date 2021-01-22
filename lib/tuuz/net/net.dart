@@ -6,9 +6,11 @@ import 'package:flutterstart/config/config.dart';
 class Net {
   Future<String> Post(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
     var http = new HttpClient();
-    http.findProxy = (url) {
-      return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
-    };
+    if (Config().Proxy_debug) {
+      http.findProxy = (url) {
+        return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+      };
+    }
     var uri;
     if (get == null || get.isEmpty) {
       uri = new Uri.http(url, path);
@@ -31,9 +33,11 @@ class Net {
 
   Future<String> PostRaw(String url, path, Map<String, String> get, dynamic post, Map<String, String> header) async {
     var http = new HttpClient();
-    http.findProxy = (url) {
-      return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
-    };
+    if (Config().Proxy_debug) {
+      http.findProxy = (url) {
+        return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+      };
+    }
     var uri;
     if (get == null || get.isEmpty) {
       uri = new Uri.http(url, path);
@@ -55,9 +59,11 @@ class Net {
 
   Future<String> PostJson(String url, path, Map<String, String> get, Map<String, dynamic> post, Map<String, String> header) async {
     var http = new HttpClient();
-    http.findProxy = (url) {
-      return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
-    };
+    if (Config().Proxy_debug) {
+      http.findProxy = (url) {
+        return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+      };
+    }
     var uri;
     if (get == null || get.isEmpty) {
       uri = new Uri.http(url, path);
@@ -79,9 +85,11 @@ class Net {
 
   Future<String> Get(String url, path, Map<String, String> get, Map<String, String> header) async {
     var http = new HttpClient();
-    http.findProxy = (url) {
-      return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
-    };
+    if (Config().Proxy_debug) {
+      http.findProxy = (url) {
+        return HttpClient.findProxyFromEnvironment(url, environment: {"http_proxy": Config().ProxyURL});
+      };
+    }
     var uri;
     if (get == null || get.isEmpty) {
       uri = new Uri.http(url, path);
