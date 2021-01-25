@@ -8,7 +8,7 @@ class Config {
     fontSize: 16,
   );
 
-  bool Proxy_debug = true;
+  bool Proxy_debug = false;
 
   String ProxyURL = "http://10.0.0.100:9000";
 
