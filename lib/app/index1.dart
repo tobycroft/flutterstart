@@ -38,7 +38,8 @@ class _Index1 extends State<Index1> {
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
             itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              Tuuz_Popup().MenuItem(Icons.message, "登录", "login"),
+              Tuuz_Popup().MenuItem(Icons.login, "登录", "login"),
+              Tuuz_Popup().MenuItem(Icons.logout, "退出登录", "logout"),
               Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
               Tuuz_Popup().MenuItem(Icons.qr_code, "扫码", "scanner"),
               Tuuz_Popup().MenuItem(Icons.zoom_out, "httptest", "httptest"),
@@ -49,6 +50,12 @@ class _Index1 extends State<Index1> {
                 case "login":
                   {
                     Windows().Open(context, Login());
+                    break;
+                  }
+                case "logout":
+                  {
+                    Storage().Delete("__uid__");
+                    Storage().Delete("__token__");
                     break;
                   }
                 case "index_help":
@@ -75,8 +82,9 @@ class _Index1 extends State<Index1> {
                       var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
 
                       var json = jsonDecode(ret);
-                      // print(json);
-                      if (json["code"] == 0) {
+                      if (json["code"] == -1) {
+                        Windows().Open(context, Login());
+                      } else if (json["code"] == 0) {
                         List data = json["data"];
                         data.forEach((value) {
                           bot_datas.add(value);
