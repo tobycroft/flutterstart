@@ -1,5 +1,3 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
 import 'package:flutterstart/app/index1.dart';
 import 'package:flutterstart/config/auth.dart';
