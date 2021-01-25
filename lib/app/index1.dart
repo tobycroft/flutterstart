@@ -75,14 +75,13 @@ class _Index1 extends State<Index1> {
                       var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
 
                       var json = jsonDecode(ret);
+                      // print(json);
                       if (json["code"] == 0) {
                         List data = json["data"];
                         data.forEach((value) {
                           bot_datas.add(value);
                         });
-                        setState(() {
-
-                        });
+                        setState(() {});
                       }
                     }
 
