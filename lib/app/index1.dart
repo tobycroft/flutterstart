@@ -99,7 +99,7 @@ class _Index1 extends State<Index1> {
 
                 default:
                   {
-                    Alert().Simple(context, "SS", "内容", () {});
+                    Alert().Simple(context, "SS", value, () {});
                     break;
                   }
               }
