@@ -28,6 +28,27 @@ class _Index1 extends State<Index1> {
   _Index1(this._title);
 
   @override
+  Future<void> get_data() async {
+    setState(() {
+      bot_datas = [];
+    });
+    Map<String, String> post = {};
+    post["uid"] = await Storage().Get("__uid__");
+    post["token"] = await Storage().Get("__token__");
+    var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
+
+    var json = jsonDecode(ret);
+    if (json["code"] == -1) {
+      Windows().Open(context, Login());
+    } else if (json["code"] == 0) {
+      List data = json["data"];
+      data.forEach((value) {
+        bot_datas.add(value);
+      });
+      setState(() {});
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -113,26 +134,8 @@ class _Index1 extends State<Index1> {
           itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
           itemCount: bot_datas.length,
         ),
-        onRefresh: () async {
-          setState(() {
-            bot_datas = [];
-          });
-          Map<String, String> post = {};
-          post["uid"] = await Storage().Get("__uid__");
-          post["token"] = await Storage().Get("__token__");
-          var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
-
-          var json = jsonDecode(ret);
-          if (json["code"] == -1) {
-            Windows().Open(context, Login());
-          } else if (json["code"] == 0) {
-            List data = json["data"];
-            data.forEach((value) {
-              bot_datas.add(value);
-            });
-            setState(() {});
-          }
-        },
+        firstRefresh: true,
+        onRefresh: get_data,
       ),
       //   Center(
       //     //     child: ListView.builder(
