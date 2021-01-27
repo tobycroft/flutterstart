@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutterstart/app/help/help.dart';
 import 'package:flutterstart/app/login/login.dart';
 import 'package:flutterstart/config/config.dart';
@@ -107,12 +108,38 @@ class _Index1 extends State<Index1> {
           ),
         ],
       ),
-      body: Center(
+      body: EasyRefresh(
         child: ListView.builder(
           itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
           itemCount: bot_datas.length,
         ),
+        onRefresh: () async {
+          setState(() {
+            bot_datas = [];
+          });
+          Map<String, String> post = {};
+          post["uid"] = await Storage().Get("__uid__");
+          post["token"] = await Storage().Get("__token__");
+          var ret = await Net().Post(Config().Url, "/v1/bot/list/owned", null, post, null);
+
+          var json = jsonDecode(ret);
+          if (json["code"] == -1) {
+            Windows().Open(context, Login());
+          } else if (json["code"] == 0) {
+            List data = json["data"];
+            data.forEach((value) {
+              bot_datas.add(value);
+            });
+            setState(() {});
+          }
+        },
       ),
+      //   Center(
+      //     //     child: ListView.builder(
+      //     //       itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
+      //     //       itemCount: bot_datas.length,
+      //     //     ),
+      //     //   ),
     );
   }
 }
