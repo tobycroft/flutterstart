@@ -23,9 +23,11 @@ class _login extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    var uid_controller = new TextEditingController(text: "");
+    var password_controller = new TextEditingController(text: "");
     void initState() {
       setState(() {
-        var con = new TextEditingController(text: "");
+        var _con = new TextEditingController(text: "");
       });
     }
 
@@ -82,6 +84,7 @@ class _login extends State<Login> {
                 height: 50,
               ),
               TextFormField(
+                controller: uid_controller,
                 cursorColor: Colors.white,
                 textCapitalization: TextCapitalization.words,
                 style: TextStyle(
@@ -114,6 +117,7 @@ class _login extends State<Login> {
                 height: 50,
               ),
               TextFormField(
+                controller: password_controller,
                 cursorColor: Colors.white,
                 textCapitalization: TextCapitalization.words,
                 style: TextStyle(
