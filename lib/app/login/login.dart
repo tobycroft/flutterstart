@@ -29,6 +29,7 @@ class _login extends State<Login> {
       this.qq = uid_controller.text;
     });
 
+    //这里双向绑定简直是太蛋疼了
     password_controller.addListener(() {
       this.password = password_controller.text;
     });
