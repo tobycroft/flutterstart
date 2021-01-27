@@ -25,11 +25,25 @@ class _login extends State<Login> {
   Widget build(BuildContext context) {
     var uid_controller = new TextEditingController(text: "");
     var password_controller = new TextEditingController(text: "");
-    void initState() {
-      setState(() {
-        var _con = new TextEditingController(text: "");
-      });
+    uid_controller.addListener(() {
+      this.qq = uid_controller.text;
+    });
+
+    password_controller.addListener(() {
+      this.password = password_controller.text;
+    });
+    void initold() async {
+      uid_controller.text = await Storage().Get("__uid__");
+
+      password_controller.text = await Storage().Get("__password__");
     }
+
+    initold();
+    // void initState() {
+    //   setState(() {
+    //     var _con = new TextEditingController(text: "");
+    //   });
+    // }
 
     return Scaffold(
       appBar: AppBar(
