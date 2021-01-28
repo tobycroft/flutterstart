@@ -8,6 +8,10 @@ class Robot_info_index extends StatefulWidget {
 class _robot_info_index extends State<Robot_info_index> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("机器人设定"),
+      ),
+    );
   }
 }

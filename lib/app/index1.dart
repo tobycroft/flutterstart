@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutterstart/app/help/help.dart';
 import 'package:flutterstart/app/login/login.dart';
+import 'package:flutterstart/app/robot_info/index.dart';
 import 'package:flutterstart/config/config.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/net/net.dart';
@@ -65,8 +66,7 @@ class _Index1 extends State<Index1> {
           PopupMenuButton(
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
-            itemBuilder: (BuildContext context) =>
-            <PopupMenuItem<String>>[
+            itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
               Tuuz_Popup().MenuItem(Icons.login, "登录", "login"),
               Tuuz_Popup().MenuItem(Icons.logout, "退出登录", "logout"),
               Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
@@ -186,6 +186,7 @@ class BotItem extends StatelessWidget {
         ),
         onPressed: () {
           //Todo：短按进入机器人信息
+          Windows().Open(this._context, Robot_info_index());
         },
         onLongPress: () {
           //Todo：长按弹出菜单
