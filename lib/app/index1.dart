@@ -65,7 +65,8 @@ class _Index1 extends State<Index1> {
           PopupMenuButton(
             icon: Icon(Icons.menu),
             offset: Offset(100, 100),
-            itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+            itemBuilder: (BuildContext context) =>
+            <PopupMenuItem<String>>[
               Tuuz_Popup().MenuItem(Icons.login, "登录", "login"),
               Tuuz_Popup().MenuItem(Icons.logout, "退出登录", "logout"),
               Tuuz_Popup().MenuItem(Icons.help_center, "首页帮助", "index_help"),
@@ -184,10 +185,10 @@ class BotItem extends StatelessWidget {
           ],
         ),
         onPressed: () {
-          Alert().Confirm(this._context, "dianan", "dianan", () {});
+          //Todo：短按进入机器人信息
         },
         onLongPress: () {
-          Alert().Confirm(this._context, "lp", "lp", () {});
+          //Todo：长按弹出菜单
         },
       ),
       trailing: Text(
