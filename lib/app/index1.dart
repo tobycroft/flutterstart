@@ -137,7 +137,7 @@ class _Index1 extends State<Index1> {
       ),
       body: EasyRefresh(
         child: ListView.builder(
-          itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
+          itemBuilder: (BuildContext con, int index) => BotItem(this.context, bot_datas[index]),
           itemCount: bot_datas.length,
         ),
         firstRefresh: false,
@@ -159,8 +159,9 @@ List bot_datas = [];
 // with an ExpansionTile.
 class BotItem extends StatelessWidget {
   var item;
+  var _context;
 
-  BotItem(this.item);
+  BotItem(this._context, this.item);
 
   Widget _buildTiles(Map ret) {
     if (ret == null) return ListTile();
@@ -168,22 +169,26 @@ class BotItem extends StatelessWidget {
       leading: CircleAvatar(
         child: Image(image: NetworkImage(ret["img"])),
       ),
-      title: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                ret["cname"].toString(),
-                style: Config().Text_Style_default,
-              ),
-              Text(
-                ret["bot"].toString(),
-                style: Config().Text_Style_default,
-              )
-            ],
-          )
-        ],
+      title: FlatButton(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              ret["cname"].toString(),
+              style: Config().Text_Style_default,
+            ),
+            Text(
+              ret["bot"].toString(),
+              style: Config().Text_Style_default,
+            )
+          ],
+        ),
+        onPressed: () {
+          Alert().Confirm(this._context, "dianan", "dianan", () {});
+        },
+        onLongPress: () {
+          Alert().Confirm(this._context, "lp", "lp", () {});
+        },
       ),
       trailing: Text(
         ret["date"].toString(),
