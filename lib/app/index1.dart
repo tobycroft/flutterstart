@@ -28,6 +28,12 @@ class _Index1 extends State<Index1> {
   _Index1(this._title);
 
   @override
+  void initState() {
+    get_data();
+    super.initState();
+  }
+
+  @override
   Future<void> get_data() async {
     setState(() {
       bot_datas = [];
@@ -134,7 +140,7 @@ class _Index1 extends State<Index1> {
           itemBuilder: (BuildContext context, int index) => BotItem(bot_datas[index]),
           itemCount: bot_datas.length,
         ),
-        firstRefresh: true,
+        firstRefresh: false,
         onRefresh: get_data,
       ),
       //   Center(
