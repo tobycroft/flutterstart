@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutterstart/app/help/help.dart';
 import 'package:flutterstart/app/login/login.dart';
-import 'package:flutterstart/app/robot_info/index.dart';
+import 'package:flutterstart/app/robot_info/robot_info.dart';
 import 'package:flutterstart/config/config.dart';
 import 'package:flutterstart/tuuz/alert/ios.dart';
 import 'package:flutterstart/tuuz/net/net.dart';
@@ -186,7 +186,7 @@ class BotItem extends StatelessWidget {
         ),
         onPressed: () {
           //Todo：短按进入机器人信息
-          Windows().Open(this._context, Robot_info_index());
+          Windows().Open(this._context, Robot_info_index(this.item));
         },
         onLongPress: () {
           //Todo：长按弹出菜单

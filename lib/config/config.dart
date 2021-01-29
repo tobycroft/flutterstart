@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Config {
   double Font_Size = 24;
@@ -8,7 +9,12 @@ class Config {
     fontSize: 16,
   );
 
-  bool Proxy_debug = false;
+  TextStyle Text_style_notimportant_auto = TextStyle(
+    // fontSize: 16,
+    color: Colors.black12,
+  );
+
+  bool Proxy_debug = true;
 
   String ProxyURL = "http://192.168.1.10:9000";
 
